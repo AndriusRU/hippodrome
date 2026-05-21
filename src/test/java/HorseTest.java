@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class HorseTest {
 
     @Test
-    @DisplayName("When the first param in constructor is null => throw EA")
+    @DisplayName("When the first param in constructor is null => throw IAE")
     void whenTheFirstParamInConstructorIsNullThrowEa() {
         assertThrows(IllegalArgumentException.class, () -> {
             new Horse(null, 3);
@@ -36,7 +36,7 @@ class HorseTest {
     @ValueSource(
             strings = {" ", "  ", "\t", "\n", "\r", "\r\n", "\n\r",  " \t ", " \n "}
     )
-    @DisplayName("When the first param is Blank or Empty => throw EA")
+    @DisplayName("When the first param is Blank or Empty => throw IAE")
     void whenTheFirstParamIsBlankOrEmptyThrowEa(String name) {
         assertThrows(IllegalArgumentException.class, () -> {
             new Horse(name, 3);
@@ -59,7 +59,7 @@ class HorseTest {
     }
 
     @Test
-    @DisplayName("When the second param in constructor is negative => throw EA")
+    @DisplayName("When the second param in constructor is negative => throw IAE")
     void whenTheSecondParamInConstructorIsNegativeThrowEa() {
         assertThrows(IllegalArgumentException.class, () -> {
             new Horse("Plotva", -3);
@@ -78,7 +78,7 @@ class HorseTest {
     }
 
     @Test
-    @DisplayName("When the third param in constructor is negative => throw EA")
+    @DisplayName("When the third param in constructor is negative => throw IAE")
     void whenTheThirdParamInConstructorIsNegativeThrowEa() {
         assertThrows(IllegalArgumentException.class, () -> {
             new Horse("Plotva", 3, -3);
